@@ -1,6 +1,6 @@
-import {useEffect} from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
-import {useTelegram} from './hook/useTelegram'
+import {useTelegram} from './Hook/useTelegram'
 
 
 function App() {
@@ -8,13 +8,13 @@ function App() {
 
   useEffect( () => {
     tgw.ready();
-  }, [])
+  })
 
   return (
     <div className="App">
-      it doesn't work
       <Header />
-      <button onClick={onToggleButton}>Toggle</button>
+      does it work?      
+      <button onClick={onToggleButton}>Main Button</button>
     </div>
   );
 }
