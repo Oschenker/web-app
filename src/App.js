@@ -1,6 +1,8 @@
 import React, {useEffect} from 'react';
 import './App.css';
-import {useTelegram} from './Hook/useTelegram'
+import {useTelegram} from './hook/useTelegram';
+import Button from './button/button';
+import Header from './header/header';
 
 
 function App() {
@@ -12,12 +14,9 @@ function App() {
 
   return (
     <div className="App">
-      <button onClick={onClose}>Close app</button>
+      <Header />
       does it work?
-      <span className={'username'}>
-                {user?.username}
-      </span>
-      <button onClick={onToggleButton}>Main Button</button>
+      <Button onClick={onToggleButton}>Main Button</Button>
     </div>
   );
 }
