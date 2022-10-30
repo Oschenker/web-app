@@ -1,24 +1,19 @@
-import React, { useEffect } from 'react';
+import {useEffect} from 'react';
 import './App.css';
-const tgw = window.Telegram.WebApp;
+import {useTelegram} from './hook/useTelegram'
 
 
 function App() {
+  const {onToggleButton, tgw} = useTelegram();
 
   useEffect( () => {
     tgw.ready();
   }, [])
 
-  const onClose = () => {
-    tgw.close()
-  }
   return (
     <div className="App">
-      <header className="App-header">
-        IT'S WORK SUCCESSFULLY
-
-        <button onClick={onClose}>CLOSE</button>
-      </header>
+      it doesn't work
+      <button onClick={onToggleButton}>Toggle</button>
     </div>
   );
 }
