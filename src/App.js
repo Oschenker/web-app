@@ -4,16 +4,19 @@ import {useTelegram} from './Hook/useTelegram'
 
 
 function App() {
-  const {onToggleButton, tgw} = useTelegram();
+  const {onToggleButton, onClose, user, tgw} = useTelegram();
 
-  useEffect( () => {
-    tgw.ready();
-  })
+  useEffect(() => {
+    tgw.ready(); 
+  }, [])
 
   return (
     <div className="App">
-      <Header />
-      does it work?      
+      <button onClick={onClose}>Close app</button>
+      does it work?
+      <span className={'username'}>
+                {user?.username}
+      </span>
       <button onClick={onToggleButton}>Main Button</button>
     </div>
   );
